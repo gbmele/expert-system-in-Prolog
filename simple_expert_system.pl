@@ -1,79 +1,79 @@
 % +----------------------------------------------+
-% | BATUHAN TOPALOĞLU 151044026 CSE341 HW3 PART1 |
+% | BATUHAN TOPALOÄLU 151044026 CSE341 HW3 PART1 |
 % +----------------------------------------------+
+%%%
 %
-%
-% çalıştırma sırasında add method formatlarına bakılmak istenirse
-% 'formats()' çağrılabilir.
+% Ã§alÄ±ÅŸtÄ±rma sÄ±rasÄ±nda add method formatlarÄ±na bakÄ±lmak istenirse
+% 'formats()' Ã§aÄŸrÄ±labilir.
 %
 %>>>>>>> conflicts(CourseID1,CourseID2):-
-%      Burada kontrolün doğru dönebilmesi için arka planda
-%     bu iki dersin ders saatlerinde çakışma olmuyor olması
+%      Burada kontrolÃ¼n doÄŸru dÃ¶nebilmesi iÃ§in arka planda
+%     bu iki dersin ders saatlerinde Ã§akÄ±ÅŸma olmuyor olmasÄ±
 %     gerekiyor.
 %
-%     ! Bence çakışma için sadece zaman çakışması olması yeterli,
-%     sınıfların ayrı olması çakışma olmadığı anlamına gelmez.
+%     ! Bence Ã§akÄ±ÅŸma iÃ§in sadece zaman Ã§akÄ±ÅŸmasÄ± olmasÄ± yeterli,
+%     sÄ±nÄ±flarÄ±n ayrÄ± olmasÄ± Ã§akÄ±ÅŸma olmadÄ±ÄŸÄ± anlamÄ±na gelmez.
 %
 %>>>>>>> assign(RoomID,CourseID):-
 %
-%     1- Sınıfta o dersin ders saati kadar boş bir saat dilimi olup
-%       olmadığına bakılır.
+%     1- SÄ±nÄ±fta o dersin ders saati kadar boÅŸ bir saat dilimi olup
+%       olmadÄ±ÄŸÄ±na bakÄ±lÄ±r.
 %
-%     2- Sınıfın ekipmanları dersin gereksinimlerini
-%       karşılıyor mu o kontrol edilir.
+%     2- SÄ±nÄ±fÄ±n ekipmanlarÄ± dersin gereksinimlerini
+%       karÅŸÄ±lÄ±yor mu o kontrol edilir.
 %
-%     3- Sınıfın öğrenci kapasitesi dersin kapasitesine uygun mu diye
-%       konrol edilir. O an dersi alan öğrenci sayısına değil, direk
-%       dersin kapasitesine göre kontrol ettim.
+%     3- SÄ±nÄ±fÄ±n Ã¶ÄŸrenci kapasitesi dersin kapasitesine uygun mu diye
+%       konrol edilir. O an dersi alan Ã¶ÄŸrenci sayÄ±sÄ±na deÄŸil, direk
+%       dersin kapasitesine gÃ¶re kontrol ettim.
 %
 %
 %>>>>>>> enroll(StudentID,CourseID):-
 %
-%     1- Dersin alındığı sınıfın imkanları engelli öğrencilere uygun mu
+%     1- Dersin alÄ±ndÄ±ÄŸÄ± sÄ±nÄ±fÄ±n imkanlarÄ± engelli Ã¶ÄŸrencilere uygun mu
 %       diye kontrol edilir.
 %
-%     2- Dersin öğrenci kapasitesi yeni öğrenci eklenmeye uygun mu diye
+%     2- Dersin Ã¶ÄŸrenci kapasitesi yeni Ã¶ÄŸrenci eklenmeye uygun mu diye
 %       kontrol edilir.
 %
 %
 %
 %>>>>>>>> add_student(SID,Cours,Hc):-
 %
-%     1- Daha önce SID de bir öğrenci olup olmadığı kontrol edilir,
-%        varsa işlem false olur.
+%     1- Daha Ã¶nce SID de bir Ã¶ÄŸrenci olup olmadÄ±ÄŸÄ± kontrol edilir,
+%        varsa iÅŸlem false olur.
 %
-%     2- Kayıt olanmak istenilen derslerin geçerli birer ders olup
-%        olmadığı kontrol edilir.
+%     2- KayÄ±t olanmak istenilen derslerin geÃ§erli birer ders olup
+%        olmadÄ±ÄŸÄ± kontrol edilir.
 %
-%     3- Kayıt olunmak istenilen derslerin sınıfları öğrenci için uygun
-%        koşullara sahip mi diye kontrol edilir.
+%     3- KayÄ±t olunmak istenilen derslerin sÄ±nÄ±flarÄ± Ã¶ÄŸrenci iÃ§in uygun
+%        koÅŸullara sahip mi diye kontrol edilir.
 %
-%     4- Kayıt olunmak istenilen sınıfta boş kontenjan var mı diye
+%     4- KayÄ±t olunmak istenilen sÄ±nÄ±fta boÅŸ kontenjan var mÄ± diye
 %        kontrol edilir.
 %
-%     5- Kayıt olunmak istenilen derslerin saatleri birbirleriyle
-%     çakışıyor mu diye kontrol edilir.
+%     5- KayÄ±t olunmak istenilen derslerin saatleri birbirleriyle
+%     Ã§akÄ±ÅŸÄ±yor mu diye kontrol edilir.
 %
 %
 %>>>>>>>> add_room(RID,Cap,Eq):-
 %
-%     1- sadece daha önce aynı ID ile bir sınıf olmaması yeterli koşul.
+%     1- sadece daha Ã¶nce aynÄ± ID ile bir sÄ±nÄ±f olmamasÄ± yeterli koÅŸul.
 %
 %
 %>>>>>>>> add_course(CID,IID,C,HourList,R,E):-
 %
-%     1- aynı ID ile daha önce oluşturulmuş bir kurs var mı diye kontrol
+%     1- aynÄ± ID ile daha Ã¶nce oluÅŸturulmuÅŸ bir kurs var mÄ± diye kontrol
 %     edilir.
 %
-%     2- verilen instructor ID geçerli bir ID mi diye kontrol edilir.
+%     2- verilen instructor ID geÃ§erli bir ID mi diye kontrol edilir.
 %
-%     3- occupancy tablosunu güncellemeyi kullanıcıya bıraktım.
+%     3- occupancy tablosunu gÃ¼ncellemeyi kullanÄ±cÄ±ya bÄ±raktÄ±m.
 %
-% ** >>>>>>>> yeni kurs eklendiğinde occupancy tablosunun güncellemesi
-% işini kullanıcı tarafına bırakıyorum ,güncelleme yapılmazsa
-% hatalı sonuçlar ortaya çıkabilir. Bu bir eksik sayılabilir sanırım
-% ancak bu kısmı yetiştiremedim diyebilirim. Diğer bütün kontrollerimin
-% doğru çalıştığını düşünüyorum.
+% ** >>>>>>>> yeni kurs eklendiÄŸinde occupancy tablosunun gÃ¼ncellemesi
+% iÅŸini kullanÄ±cÄ± tarafÄ±na bÄ±rakÄ±yorum ,gÃ¼ncelleme yapÄ±lmazsa
+% hatalÄ± sonuÃ§lar ortaya Ã§Ä±kabilir. Bu bir eksik sayÄ±labilir sanÄ±rÄ±m
+% ancak bu kÄ±smÄ± yetiÅŸtiremedim diyebilirim. DiÄŸer bÃ¼tÃ¼n kontrollerimin
+% doÄŸru Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± dÃ¼ÅŸÃ¼nÃ¼yorum.
 %
 %
 
@@ -89,15 +89,15 @@ room(z06,10,[hcapped,projector]).
 room(z11,15,[hcapped]).  % 10
 
 
-%instructor(ınstructor_ID).
+%instructor(Ä±nstructor_ID).
 instructor(genc,[projector],[cse341]).
 instructor(turker,[smartboard],[cse343]).
 instructor(bayrakci,[],[cse331]).
 instructor(gozupek,[smartboard],[cse321]).
 
 %student(Student_ID,Cours_list,hcapped)
-student(1,[cse341,cse343,cse331],no). % sizin verdiğiniz tabloda derslerin kapasitesi gözetilmeden bir atama yapılmış.
-student(2,[cse341,cse343],no).        % bunlar program başlarken yüklü bilgi olarak geldiği için kontrol etmiyorum.
+student(1,[cse341,cse343,cse331],no). % sizin verdiÄŸiniz tabloda derslerin kapasitesi gÃ¶zetilmeden bir atama yapÄ±lmÄ±ÅŸ.
+student(2,[cse341,cse343],no).        % bunlar program baÅŸlarken yÃ¼klÃ¼ bilgi olarak geldiÄŸi iÃ§in kontrol etmiyorum.
 student(3,[cse341,cse331],no).
 student(4,[cse341],no).
 student(5,[cse343,cse331],no).
@@ -114,7 +114,7 @@ student(15,[cse343,cse321],yes).
 
 
 
-%course(course_ID,ınstructor_ID,Capacity,Hour,Room,Needs)
+%course(course_ID,Ä±nstructor_ID,Capacity,Hour,Room,Needs)
 course(cse341,genc,10,4,z06,[hcapped]).
 course(cse343,turker,6,3,z11,[]).
 course(cse331,bayrakci,5,3,z06,[]).
@@ -141,7 +141,7 @@ occupancy(z11,15,cse321).
 occupancy(z11,16,cse321).
 
 
-% çalıştırma sırasında method formatlarına bakılmak istenirse diye
+% Ã§alÄ±ÅŸtÄ±rma sÄ±rasÄ±nda method formatlarÄ±na bakÄ±lmak istenirse diye
 % ekledim.
 formats():-
    write('METHOD FORMATS :'),nl,
@@ -152,8 +152,8 @@ formats():-
 
 % Check whether there is any scheduling conflict. -->
 conflict(CID1,CID2):-
-    course_hour(8,CID1,[],C1),  %Kursların ders saatlerinde bir çakışma var mı diye kontrol edilir.
-    course_hour(8,CID2,[],C2),  %Normal hayatta ders çakışması için sadece saatlere baktığımız için burada sınıfları kontrol etmiyorum.
+    course_hour(8,CID1,[],C1),  %KurslarÄ±n ders saatlerinde bir Ã§akÄ±ÅŸma var mÄ± diye kontrol edilir.
+    course_hour(8,CID2,[],C2),  %Normal hayatta ders Ã§akÄ±ÅŸmasÄ± iÃ§in sadece saatlere baktÄ±ÄŸÄ±mÄ±z iÃ§in burada sÄ±nÄ±flarÄ± kontrol etmiyorum.
     \+compare_lists(C1,C2).
 
 
@@ -162,8 +162,8 @@ assign(RoomID,CourseID):-
     course(CourseID,_,CC,CH,_,ELM),
     room(Room,RC,RE),
     RC >= CC,                        % kapasitesi yeterli mi diye kontrol edilir.
-    include_lists(ELM,RE),           % ders için gerekli ekipmanların sınıfta olup olmadığı kontrol edilir.
-    free_time(8,Room,0,CH),          % sınıfta ders için yeterli boş saat var mı diye kontrol edilir.
+    include_lists(ELM,RE),           % ders iÃ§in gerekli ekipmanlarÄ±n sÄ±nÄ±fta olup olmadÄ±ÄŸÄ± kontrol edilir.
+    free_time(8,Room,0,CH),          % sÄ±nÄ±fta ders iÃ§in yeterli boÅŸ saat var mÄ± diye kontrol edilir.
     RoomID  =  Room.
 
 
@@ -181,18 +181,18 @@ enroll(StudentID,CourseID):-
 
 % add_student(SID,[H|T],Hc):- add_student(SID,H,T,Hc).
 add_student(SID,Cours,Hc):-
-    \+ student(SID,_,_),       % Daha önce ID de bir öğrenci olmamalı.
-    check_course(Cours),       % girilen kursların geçerli birer kurs olup olmadığı kontrol edilir.
-    check_conflict(Cours,Res), % alınmak istenen derslerin saatleri çakışıyor mu diye kontrol edilir.
+    \+ student(SID,_,_),       % Daha Ã¶nce ID de bir Ã¶ÄŸrenci olmamalÄ±.
+    check_course(Cours),       % girilen kurslarÄ±n geÃ§erli birer kurs olup olmadÄ±ÄŸÄ± kontrol edilir.
+    check_conflict(Cours,Res), % alÄ±nmak istenen derslerin saatleri Ã§akÄ±ÅŸÄ±yor mu diye kontrol edilir.
     Res == 0,
-    assertz(student(SID,Cours,Hc)), %uygunluk kontrol edilmeden önce student objesi oluşturulur ancak uygun koşulları sağlamazsa silinir ve iz bırakmaz.
+    assertz(student(SID,Cours,Hc)), %uygunluk kontrol edilmeden Ã¶nce student objesi oluÅŸturulur ancak uygun koÅŸullarÄ± saÄŸlamazsa silinir ve iz bÄ±rakmaz.
     (check_available(SID,Cours);retract(student(SID,Cours,Hc)),1 == 2).
 
 
 
-% bir sınıf eklemek için sadece o sınıf ıd'sinde daha önce bir sınıf
-% olup olmadığını kontrol etmek dışında bir koşul aklıma gelmedi o
-% yüzden tek bir koşul kontrolü yapıyorum ve yeni sınıfı oluşturuyorum.
+% bir sÄ±nÄ±f eklemek iÃ§in sadece o sÄ±nÄ±f Ä±d'sinde daha Ã¶nce bir sÄ±nÄ±f
+% olup olmadÄ±ÄŸÄ±nÄ± kontrol etmek dÄ±ÅŸÄ±nda bir koÅŸul aklÄ±ma gelmedi o
+% yÃ¼zden tek bir koÅŸul kontrolÃ¼ yapÄ±yorum ve yeni sÄ±nÄ±fÄ± oluÅŸturuyorum.
 add_room(RID,Cap,Eq):-
 
     \+ room(RID,_,_),
@@ -202,29 +202,29 @@ add_room(RID,Cap,Eq):-
 %add_course(Course_ID,Instruction_ID,Capacity,Hour,Room_ID,Equipment)
 add_course(CID,IID,C,Hour,R,E):-
 
-    \+ course(CID,_,_,_,_,_),  % course ID daha önce alınmış olmamalı
-    instructor(IID,_,_),       %instructor ID geçerli bir ID olmalı
+    \+ course(CID,_,_,_,_,_),  % course ID daha Ã¶nce alÄ±nmÄ±ÅŸ olmamalÄ±
+    instructor(IID,_,_),       %instructor ID geÃ§erli bir ID olmalÄ±
     assertz(course(CID,IID,C,Hour,R,E)),
     (assign(R,CID);retract(course(CID,IID,C,Hour,R,E))). % Course verilen Room a assign edilebilirse sorun yok
-                                                         % oluşturulan obje korunur ancak atamaya uygun değilse silinir.
+                                                         % oluÅŸturulan obje korunur ancak atamaya uygun deÄŸilse silinir.
 
 
 
-% Burada bütün sorumluluğu kullanıcıya bırakıyorum. Kullanıcı occupancy
-% tablosu inceleyip bir derse sınıf atadığında her ders saati occupancy
-% tablosunu güncellemesi gerekiyor.
+% Burada bÃ¼tÃ¼n sorumluluÄŸu kullanÄ±cÄ±ya bÄ±rakÄ±yorum. KullanÄ±cÄ± occupancy
+% tablosu inceleyip bir derse sÄ±nÄ±f atadÄ±ÄŸÄ±nda her ders saati occupancy
+% tablosunu gÃ¼ncellemesi gerekiyor.
 add_occupancy(RID,Hour,CID):-
   retract(occupancy(RID,Hour,_)),
   assertz(occupancy(RID,Hour,CID)).
 
 
-%++++++++++  Y A R D I M C I   K O Ş U L  İ F A D E L E R İ +++++++++++
-% Bu methodlar dışarıdan direk kullanıcının kullanmaması gereken
-% yardımcı koşul ifadeleri
+%++++++++++  Y A R D I M C I   K O Å U L  Ä° F A D E L E R Ä° +++++++++++
+% Bu methodlar dÄ±ÅŸarÄ±dan direk kullanÄ±cÄ±nÄ±n kullanmamasÄ± gereken
+% yardÄ±mcÄ± koÅŸul ifadeleri
 
 
-% verilen iki liste arasında çakışan eleman olup olmadığını kontrol
-% etmek için kullanılan bir method.
+% verilen iki liste arasÄ±nda Ã§akÄ±ÅŸan eleman olup olmadÄ±ÄŸÄ±nÄ± kontrol
+% etmek iÃ§in kullanÄ±lan bir method.
 compare_lists([],_).
 compare_lists([H|T],L2):-
     \+member(H,L2),
@@ -232,7 +232,7 @@ compare_lists([H|T],L2):-
 
 
 
-%bir öğrencinin kayıt olmak istediği dersin geçerli bir ders olup olmadığını kontrol ediyor.
+%bir Ã¶ÄŸrencinin kayÄ±t olmak istediÄŸi dersin geÃ§erli bir ders olup olmadÄ±ÄŸÄ±nÄ± kontrol ediyor.
 check_course([]).
 check_course([H|T]):-
     course(H,_,_,_,_,_),
@@ -241,9 +241,9 @@ check_course([H|T]):-
 
 
 
-% Bu fonksiyon L1 parametresi olarak verilen listenin elemanlarının L2
-% listesinde olup olmadığını kontrol eder. L1 in bütün elemanları L2 de
-% varsa True , diğer durumda false döner.
+% Bu fonksiyon L1 parametresi olarak verilen listenin elemanlarÄ±nÄ±n L2
+% listesinde olup olmadÄ±ÄŸÄ±nÄ± kontrol eder. L1 in bÃ¼tÃ¼n elemanlarÄ± L2 de
+% varsa True , diÄŸer durumda false dÃ¶ner.
 include_lists(L1,L2):-
     length(L1,LL1),
     length(L2,LL2),
@@ -258,7 +258,7 @@ include_backend([H|T],L2):-
 
 
 
-% parametre olarak gelen sınıfta toplam kaç boş ders saati olduğunu
+% parametre olarak gelen sÄ±nÄ±fta toplam kaÃ§ boÅŸ ders saati olduÄŸunu
 % hesaplayan fonksiyon.
 free_time(18,_,Count,C):- C =< Count.
 free_time(Hour,RID,Count,C):-
@@ -278,8 +278,8 @@ free_time(Hour,RID,Count,C):-
 
 
 %hours of courses
-% bir dersin işlendiği saatleri bize bir liste halinde döndürür.
-% Örn: cse341 için [8,9,10,11]
+% bir dersin iÅŸlendiÄŸi saatleri bize bir liste halinde dÃ¶ndÃ¼rÃ¼r.
+% Ã–rn: cse341 iÃ§in [8,9,10,11]
 course_hour(18,CID,Count,Count):- course(CID,_,_,X,_,_),length(Count,Len),Len == X.
 course_hour(Hour,CD1,Count,C):-
     Hour < 18,
@@ -295,9 +295,9 @@ course_hour(Hour,CID,Count,C):-
 
 
 
-% Verilen course ID ye sahip kursa kaç öğrencinin kayıtlı olduğu
-% hesaplayıp döndürür. Orn: cse341 dersi için başlangıc durumu için
-% Res değeri 10 dur.
+% Verilen course ID ye sahip kursa kaÃ§ Ã¶ÄŸrencinin kayÄ±tlÄ± olduÄŸu
+% hesaplayÄ±p dÃ¶ndÃ¼rÃ¼r. Orn: cse341 dersi iÃ§in baÅŸlangÄ±c durumu iÃ§in
+% Res deÄŸeri 10 dur.
 course_counterr(CID,Res):- course_counterr(0,CID,[],X), length(X,Res),!.
 
 course_counterr(100,_,Count,Count).
@@ -320,8 +320,8 @@ course_counterr(Hour,CID,Count,C):-
 
 
 % Parametre olarak gelen course listesindeki derslerin verilen student
-% için uygun olduğunu ispatlamak üzerine kurulmuş bir kontrol.
-% bütün dersler uygunsa True herhangi biri uygun değilse false olur.
+% iÃ§in uygun olduÄŸunu ispatlamak Ã¼zerine kurulmuÅŸ bir kontrol.
+% bÃ¼tÃ¼n dersler uygunsa True herhangi biri uygun deÄŸilse false olur.
 check_available(_,[]).
 check_available(SID,[H|T]):-
     enroll(SID,H),
@@ -330,8 +330,8 @@ check_available(SID,[H|T]):-
 
 
 
-% bir listede verilen dersler arasında conflict durumu var mı diye
-% kontrol edilen koşul
+% bir listede verilen dersler arasÄ±nda conflict durumu var mÄ± diye
+% kontrol edilen koÅŸul
 check_conflict(List,Res):-check_conflict(List,0,Res),!.
 check_conflict([_|[]],O,O).
 check_conflict([H|[HTail|TTail]],O,N):-
